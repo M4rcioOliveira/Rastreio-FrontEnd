@@ -1,6 +1,6 @@
 # Track
 
-Esse projeto FullStack Angular + Spring Bot  trata-se de uma aplicação que rastreia objetos postados no correios.
+Esse projeto FullStack Angular + Spring Bot  trata-se de uma aplicação que rastreia objetos postados nos correios.
 
 ![demonstração do rastreio](https://uploaddeimagens.com.br/images/004/250/499/original/screen.jpg?1670208514)
 
