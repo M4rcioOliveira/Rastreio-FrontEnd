@@ -1,27 +1,17 @@
 # Track
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+Esse projeto FullStack Angular + Spring Bot  trata-se de uma aplicação que rastreia objetos postados no correios.
 
-## Development server
+![demonstração do rastreio](https://uploaddeimagens.com.br/images/004/250/499/original/screen.jpg?1670208514)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Servidor de desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
+
+**Obs:** Para que funcione por completo o servidor da aplicação java também deve ser iniciado. Acesse o reposítorio do backend --> https://github.com/M4rcioOliveira/track-back
+
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Execute `ng build` para compilar o projeto. Os artefatos de compilação serão armazenados no diretório `dist/`.
