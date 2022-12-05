@@ -1,0 +1,168 @@
+<div class="container">
+  <div class="box">
+    <div class="divInputCodeTrack">
+      <label><h4>Insira o código de rastreio abaixo</h4></label>
+      <input
+        type="text"
+        placeholder="CR123456789BR"
+        maxlength="13"
+        [(ngModel)]="code"
+        (keyup)="getTrackByCode()"
+      />
+    </div>
+
+    <br />
+
+    <div id="loading" *ngIf="exibirLoading">
+      <div class="spinner-grow" role="status">
+        <span class="sr-only">Rastreando...</span>
+      </div>
+    </div>
+
+    <div
+      id="divStatusNaoAchado"
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="exibirStatusNaoAchado"
+    >
+      <p align="justify">
+        <strong>Rastreio não encontrado.</strong> Caso o objeto foi postado
+        recentemente pode ser que ainda não existe status ou verifique se
+        digitou corretamente.
+      </p>
+    </div>
+
+    <div class="divStatusRecente" *ngIf="exibirHistoricoRecente">
+      <div class="divStatus">
+        <div class="divImgIconsTrackStatus">
+          <img
+            class="imgIconsTrackStatus"
+            src="{{ eventTrackResult[0].imagem }}"
+          />
+        </div>
+
+        <h6><strong>Objeto: </strong> {{eventTrackResult[0].code}}</h6>
+
+
+        <h6><strong>Status: </strong>{{ eventTrackResult[0].status }}</h6>
+
+        <h6>
+          <strong>Data: </strong>{{ eventTrackResult[0].data }} às
+          {{ eventTrackResult[0].hora }}
+        </h6>
+
+        <h6><strong>Local: </strong>{{ eventTrackResult[0].local }}</h6>
+      </div>
+
+      <div class="divBtnExibirHistoricoOuOcultar">
+        <button
+          type="button"
+          (click)="funcExibirHistoricoCompleto()"
+          class="btn btn-success"
+        >
+          Exibir Histórico Completo
+        </button>
+      </div>
+    </div>
+
+    <!-- ---- -->
+
+    <div class="divStatusGeral" *ngIf="exibirHistoricoCompleto">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="divStatus">
+              <div class="divImgIconsTrackStatus">
+                <img
+                  class="imgIconsTrackStatus"
+                  src="{{ eventTrackResult[0].imagem }}"
+                />
+              </div>
+
+
+              <h6>
+                <strong>Objeto: </strong>{{eventTrackResult[0].code}}
+              </h6>
+
+              <h6>
+                <strong>Status: </strong> {{ eventTrackResult[0].status }}
+              </h6>
+
+              <h6>
+                <strong>Data: </strong>{{ eventTrackResult[0].data }} às
+                {{ eventTrackResult[0].hora }}
+              </h6>
+
+              <h6><strong>Local: </strong>{{ eventTrackResult[0].local }}</h6>
+            </div>
+          </div>
+
+          <div
+            class="carousel-item"
+            *ngFor="let item of eventTrackResult | slice : 1; let i = index"
+          >
+            <div class="divStatus">
+              <div class="divImgIconsTrackStatus">
+                <img class="imgIconsTrackStatus" src="{{ item.imagem }}" />
+              </div>
+
+              <h6>
+                <strong>Objeto: </strong> {{eventTrackResult[0].code}}
+              </h6>
+
+
+              <h6><strong>Status: </strong> {{ item.status }}</h6>
+
+              <h6>
+                <strong>Data: </strong>{{ item.data }} às
+                {{ item.hora }}
+              </h6>
+
+              <h6><strong>Local: </strong>{{ item.local }}</h6>
+            </div>
+          </div>
+
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+          </a>
+        </div>
+
+        <div class="divBtnExibirHistoricoOuOcultar">
+          <button
+            type="button"
+            (click)="funcExibirHistoricoRecente()"
+            class="btn btn-success"
+          >
+            Exibir Histórico Recente
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="rodape">
+      <img class="imgIconsTrackStatus" src="assets/api.png" />
+      <a href="https://linketrack.com/api">Link e Track</a>
+      <img class="imgIconsTrackStatus" src="assets/git.png" />
+      <a href="https://github.com/M4rcioOliveira">/M4rcioOliveira</a>
+    </div>
+  </div>
+</div>
